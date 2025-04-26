@@ -35,7 +35,7 @@ This repository contains a PyTorch implementation of the **Super-Resolution Gene
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/srgan-pytorch.git
+    git clone https://github.com/KunjalJethwani/SRGAN_pytorch.git
     cd srgan-pytorch
     ```
 
@@ -57,7 +57,7 @@ This implementation uses the **DIV2K dataset** for training and testing.
     |-- DIV2K_train_HR/  # High-resolution images (ground truth)
     |-- DIV2K_train_LR/  # Low-resolution images (optional for validation)
     ```
-3. Update the `root_dir` in the `DIV2KDataset` class to point to the dataset directory.
+3. Update the `hr_dir` and `lr_dir` in the `DIV2KDataset` class to point to the dataset directory.
 
 ---
 
@@ -66,7 +66,7 @@ This implementation uses the **DIV2K dataset** for training and testing.
 Run the training script:
 
 ```bash
-python train.py
+python scripts/train.py
 ```
 
 ### Key Parameters:
@@ -74,7 +74,7 @@ python train.py
 - `num_epochs`: Total number of training epochs (default: 100).
 - `lr`: Learning rate for both generator and discriminator optimizers (default: 1e-4).
 - `scale_factor`: Upscaling factor for SR images (default: 4).
-- `crop_size`: Size of random HR crops during training (default: 96).
+- `new_size`: Size of resized HR during training (default: 96).
 
 ---
 
@@ -111,12 +111,12 @@ To use a custom dataset, update the `DIV2KDataset` class to handle your data for
 
 - Save checkpoints after training:
     ```bash
-    torch.save(generator.state_dict(), "./output/generator.pth")
-    torch.save(discriminator.state_dict(), "./output/discriminator.pth")
+    torch.save(generator.state_dict(), "./srgan_output/generator.pth")
+    torch.save(discriminator.state_dict(), "./srgan_output/discriminator.pth")
     ```
 - Load a pretrained generator for inference:
     ```python
-    generator.load_state_dict(torch.load("./output/generator.pth"))
+    generator.load_state_dict(torch.load("./srgan_output/generator.pth"))
     generator.eval()
     ```
 
