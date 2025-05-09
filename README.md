@@ -1,6 +1,6 @@
-# SRGAN: Super-Resolution Generative Adversarial Network
+# ESRGAN: Enhanced Super-Resolution Super-Resolution Generative Adversarial Network
 
-This repository contains a PyTorch implementation of the **Super-Resolution Generative Adversarial Network (SRGAN)**, as described in the paper ["Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network"](https://arxiv.org/abs/1609.04802). SRGAN is a deep learning model designed to enhance the resolution of low-resolution images and generate visually appealing high-resolution outputs by leveraging adversarial training and perceptual loss.
+This repository contains a PyTorch implementation of the **Super-Resolution Generative Adversarial Network (SRGAN)**, as described in the paper ["Enhanced Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network"](https://arxiv.org/pdf/1809.00219). ESRGAN is a deep learning model designed to enhance the resolution of low-resolution images and generate visually appealing high-resolution outputs by leveraging adversarial training, perceptual loss, RRDB blocks and relativistic discriminator..
 
 ## Features
 
